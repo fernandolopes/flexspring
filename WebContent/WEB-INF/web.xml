@@ -11,6 +11,17 @@
   <listener>
   		<listener-class>flex.messaging.HttpFlexSession</listener-class>
   </listener>
+  
+  	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>
+			org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+  	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	
   <servlet>
      <servlet-name>flexspring</servlet-name>
@@ -46,5 +57,6 @@
    		<servlet-name>RDSDispatchServlet</servlet-name>
    		<url-pattern>/CFIDE/main/ide.cfm</url-pattern>
    </servlet-mapping>
+   
    
 </web-app>
